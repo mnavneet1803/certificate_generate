@@ -8,18 +8,19 @@ const ejs = require('ejs')
 app.use("/output", express.static(path.join(__dirname, "output")));
 
 
-app.get("/generatepdf",async (req,res)=>{
+app.post("/generatepdf",async (req,res)=>{
 
+    let reqData =  req.body
 
     let data = {
-        userId:"12297",
-        email:"temp@gmail.com" ,
-        mobile:"99999999999",
-        address:"14 temp near example",
-        name:"Navneet Malhotra",
-        dob:"30-08-1998",
-        blood:"B+",
-        gender:"male"
+        userId:reqData.userId?reqData.userId:"",
+        email:reqData.email?reqData.email:"" ,
+        mobile:reqData.mobile?reqData.mobile:"",
+        address:reqData.address?reqData.address:"",
+        name:reqData.name?reqData.name:"",
+        dob:reqData.dob?reqData.dob:"",
+        blood:reqData.blood?reqData.blood:"",
+        gender:reqData.gender?reqData.gender:""
     }
 
                        
