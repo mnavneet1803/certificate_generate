@@ -26,10 +26,8 @@ app.get("/generatepdf",async (req,res)=>{
     
     const options = {
         format: 'A4',
-        displayHeaderFooter: true,
         printBackground: true,
         // headerTemplate: headerHtml,
-        footerTemplate: '<hr/><style>span{width:100% !important;font-size:12px !important;font-family: "roboto", sans-serif !important; text-align: right; margin-right:10px}</style><hr/><span> Page <label class="pageNumber"></label> of <label class="totalPages"> </label> </span>',
         margin: {
             top: "0px",
             bottom: "180",
